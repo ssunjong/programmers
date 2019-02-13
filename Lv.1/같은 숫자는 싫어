@@ -1,0 +1,27 @@
+import java.util.*;
+
+class Solution {
+
+	public int[] solution(int[] arr) {
+		int arr_length = arr.length;
+		List<Integer> answer = new ArrayList<Integer>();
+
+		answer.add(arr[0]);
+
+		if (arr_length > 1) {
+			for (int i = 0; i < arr_length - 1; i++) {
+				if (arr[i] != arr[i + 1]) {
+					answer.add(arr[i + 1]);
+				}
+			}
+		}
+
+		int[] answer1 = new int[answer.size()];
+
+		for (int i = 0; i < answer1.length; i++) {
+			answer1[i] = answer.get(i);
+		}
+
+		return answer1;
+	}
+}
