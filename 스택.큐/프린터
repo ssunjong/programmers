@@ -27,6 +27,7 @@ class Solution {
 			} else if (count == length - 1) {
 				answer++;
 				priorities = Arrays.copyOfRange(priorities, 1, length+1);
+				priorities[length-1] = 0;
 				location--;
 			}
 		}
