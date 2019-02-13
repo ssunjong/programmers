@@ -6,7 +6,9 @@ class Solution {
 		int tmp = 0;
 
 		while (location != -1) {
-
+			
+			count = 0;
+			
 			for (int i = 1; i < length; i++) {
 				if (priorities[0] >= priorities[i]) {
 					count++;
@@ -25,7 +27,6 @@ class Solution {
 			} else if (count == length - 1) {
 				answer++;
 				priorities = Arrays.copyOfRange(priorities, 1, length+1);
-				priorities[length - 1] = 0;
 				location--;
 			}
 		}
