@@ -1,0 +1,19 @@
+class Solution {
+    public String solution(String s) {
+        StringBuilder sb = new StringBuilder();
+        String answer = "";
+        int tmp = s.length() / 2;
+
+        if (s.length() % 2 == 0) {
+            StringBuilder a = sb.append(s.charAt(tmp - 1)).append(s.charAt(tmp));
+            answer = String.valueOf(a);
+        }
+
+        else {
+            StringBuilder b = sb.append(s.charAt(tmp));
+            answer = String.valueOf(b);
+        }
+
+        return answer;
+    }
+}
