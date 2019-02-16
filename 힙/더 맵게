@@ -1,0 +1,31 @@
+import java.util.*;
+
+class Solution {
+	public int solution(int[] scoville, int K) {
+		int answer = -1;
+		int times = 0;
+		Queue<Integer> scoville_mix = new PriorityQueue<>();
+
+		for (int i = 0; i < scoville.length; i++) {
+			scoville_mix.add(scoville[i]);
+		}
+
+		while (scoville_mix.size() > 1) {
+
+			if (scoville_mix.peek() >= K) {
+				answer = times;
+				break;
+			}
+			int num1 = scoville_mix.poll();
+			int num2 = scoville_mix.poll();
+			scoville_mix.add(num1 + num2*2);
+			times++;
+		}
+
+		if (scoville_mix.poll() >= K) {
+			answer = times;
+		}
+
+		return answer;
+	}
+}
